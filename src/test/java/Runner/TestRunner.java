@@ -22,7 +22,6 @@ import java.util.Date;
 )
 public class TestRunner {
     static PropertyUtils appProperty = new PropertyUtils();
-    ;
     static SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     static String formattedTime = timeFormat.format(new Date()).replace(":", "_");
     static String reportPath = appProperty.getPropertyValue("reportDirectory");

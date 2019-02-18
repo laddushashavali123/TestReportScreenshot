@@ -23,6 +23,9 @@
 ```
 * Set up the folder path for Reporting as specified in the config.properties file as "reportDirectory" path.
 ```
+* Place the log4j properties file and extentconfig.xml in the directory path mentioned in the config properties fiile
+```
+```
 * Create folder named screenshots inside the "reportDirectory" path
 ```
 * Comment the line for FirefoxBinary option in BasePage.java if not needed(if firefox.exe is present in C drive and not in default location) to execute in firefox browser

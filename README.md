@@ -25,7 +25,7 @@
 ```
 * Place the log4j properties file and extentconfig.xml in the directory path mentioned in the config properties fiile
 ```
-* D:\\Project\\BackBaseAutomation\\console.log - Also the Log4j Path can be updated in the log4j.properties file
+* D:\\Project\\BackBaseAutomation\\console.log - Also the Path can be updated in the log4j.properties file
 ```
 * Create folder named screenshots inside the "reportDirectory" path
 ```

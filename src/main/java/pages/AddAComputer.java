@@ -1,6 +1,6 @@
-package Pages;
+package pages;
 
-import ObjectManager.BasePage;
+import objectManager.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

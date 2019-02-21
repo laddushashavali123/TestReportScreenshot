@@ -1,6 +1,6 @@
-package Steps;
+package steps;
 
-import Pages.SearchPage;
+import pages.SearchPage;
 import cucumber.TestCaseContext;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

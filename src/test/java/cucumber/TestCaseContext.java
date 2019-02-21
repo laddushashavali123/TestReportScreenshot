@@ -1,6 +1,6 @@
 package cucumber;
-import ObjectManager.PageObjectManager;
-import ObjectManager.BasePage;
+import objectManager.PageObjectManager;
+import objectManager.BasePage;
 
 public class TestCaseContext {
 

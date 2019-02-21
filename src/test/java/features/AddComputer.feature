@@ -1,6 +1,6 @@
+ @Testing
 Feature: Add a computer feature functionality
 
-  @Testing
   Scenario: Validate Add a computer page contents
     Given I open web page
     And I click on 'Add a new computer'

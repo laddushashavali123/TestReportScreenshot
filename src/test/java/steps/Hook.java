@@ -1,6 +1,6 @@
-package Steps;
+package steps;
 
-import ObjectManager.BasePage;
+import objectManager.BasePage;
 
 import com.vimalselvam.cucumber.listener.Reporter;
 import cucumber.TestCaseContext;
@@ -21,47 +21,52 @@ import utils.PropertyUtils;
 public class Hook {
     TestCaseContext testContext;
     BasePage baseUtils = new BasePage();
-
-    public Hook(TestCaseContext context) {
-        testContext = context;
-    }
-
     PropertyUtils appProperty = new PropertyUtils();
     final SimpleDateFormat timeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     String formattedTime = timeFormat.format(new Date()).replace(":", "_");
     String reportPath = appProperty.getPropertyValue("reportDirectory");
 
+    public Hook(TestCaseContext context) {
+        testContext = context;
+    }
 
     @Before
     public void BeforeSteps(Scenario scenario) {
+      //  Reporter.addStepLog(scenario.getId());
         System.out.println("Execution Of Scenario - \"" + scenario.getName() + "\" - Started..");
         System.out.println("----------------------------------------------------------------------------");
     }
 
     @After()
     public void afterScenario(Scenario scenario) {
-
         try {
             if (scenario.isFailed()) {
                 String screenshotName = scenario.getName().replaceAll(" ", "_");
-
                 //This takes a screenshot from the driver at save it to the specified location
                 File sourcePath = ((TakesScreenshot) testContext.getBasePage().getDriver()).getScreenshotAs(OutputType.FILE);
-
                 //Building up the destination path for the screenshot to save
                 //Also make sure to create a folder 'screenshots' with in the cucumber-report folder
                 File destinationPath = new File(reportPath + "/screenshots/" + screenshotName + "_" + formattedTime + ".png");
-
                 //Copy taken screenshot from source location to destination location
                 Files.copy(sourcePath, destinationPath);
-
                 //This attach the specified screenshot to the test
                 Reporter.addScreenCaptureFromPath("./screenshots/" + screenshotName + "_" + formattedTime + ".png");
+            }else{
+                String screenshotName = scenario.getName().replaceAll(" ", "_");
+                //This takes a screenshot from the driver at save it to the specified location
+                File sourcePath = ((TakesScreenshot) testContext.getBasePage().getDriver()).getScreenshotAs(OutputType.FILE);
+                //Building up the destination path for the screenshot to save
+                //Also make sure to create a folder 'screenshots' with in the cucumber-report folder
+                File destinationPath = new File(reportPath + "/screenshots/" + screenshotName + "_" + formattedTime + ".png");
+                //Copy taken screenshot from source location to destination location
+                Files.copy(sourcePath, destinationPath);
+                //This attach the specified screenshot to the test
+                Reporter.addScreenCaptureFromPath("./screenshots/" + screenshotName + "_" + formattedTime + ".png");
+
             }
             baseUtils.closeDriver(testContext.getBasePage().getDriver());
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }

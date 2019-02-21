@@ -1,4 +1,4 @@
-package Runner;
+package runner;
 
 import com.vimalselvam.cucumber.listener.ExtentProperties;
 import com.vimalselvam.cucumber.listener.Reporter;
@@ -15,8 +15,8 @@ import java.util.Date;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "Features",
-        glue = {"Steps"},
+        features = "src/test/java/features",
+        glue = {"steps"},
         plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:"},
         tags = {"@Testing"}
 )

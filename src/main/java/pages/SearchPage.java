@@ -1,12 +1,11 @@
-package Pages;
+package pages;
 
 
-import ObjectManager.BasePage;
+import objectManager.BasePage;
 import com.vimalselvam.cucumber.listener.Reporter;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.Arrays;
 import java.util.List;
@@ -51,7 +50,6 @@ public class SearchPage extends BasePage {
                 Reporter.addStepLog("Mismatch with original values and search result values");
             }
         }
-
     }
 
     public void validateSearchPageContents() {

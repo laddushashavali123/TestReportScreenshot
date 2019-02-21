@@ -1,8 +1,8 @@
-package ObjectManager;
+package objectManager;
 
-import Pages.AddAComputer;
-import Pages.SearchPage;
-import Pages.UpdateAndDeletePage;
+import pages.AddAComputer;
+import pages.SearchPage;
+import pages.UpdateAndDeletePage;
 import org.openqa.selenium.WebDriver;
 
 

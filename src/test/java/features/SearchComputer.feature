@@ -1,3 +1,4 @@
+@Testing
 Feature: Search feature functionality
 
   Scenario: Validate Search page contents

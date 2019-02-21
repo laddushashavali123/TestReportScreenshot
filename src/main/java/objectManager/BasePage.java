@@ -1,4 +1,4 @@
-package ObjectManager;
+package objectManager;
 
 import com.vimalselvam.cucumber.listener.Reporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -252,7 +252,6 @@ public class BasePage {
         try {
             Assert.assertTrue(driver.getPageSource().contains(text));
             logger.info("" + text + " has been verified successfully in current page");
-
         } catch (NoSuchElementException e) {
             logger.info("" + text + " not displayed");
             java.util.logging.Logger.getLogger(BasePage.class.getName()).log(Level.SEVERE, "" + text + " not asserted", e);

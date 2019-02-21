@@ -65,7 +65,7 @@ Scenario: Validate Add a computer page contents
 #### Writing Step Definitions
     
 ```
-import Pages.SearchPage;
+import pages.SearchPage;
 import cucumber.TestCaseContext;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -124,7 +124,7 @@ Following configuration shows to call specific tags from feature files
 ```
 @CucumberOptions(
         features = "Features",
-        glue = {"Steps"},
+        glue = {"steps"},
         plugin = {"com.vimalselvam.cucumber.listener.ExtentCucumberFormatter:"},
         tags = {"@Testing"}
 ),

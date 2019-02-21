@@ -1,7 +1,7 @@
-package Steps;
+package steps;
 
 
-import Pages.AddAComputer;
+import pages.AddAComputer;
 import cucumber.TestCaseContext;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Then;

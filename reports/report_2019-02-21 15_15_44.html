@@ -1,0 +1,1206 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>Test Automation - Cucumber Framework</title>
+
+	<style type='text/css'>
+			
+            
+
+      
+        
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow bdd-report'>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>Test Automation - Cucumber Report</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Feb 21, 2019 03:15:44 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>@Testing</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Features</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='33.333%'><span class='strong'>1</span> feature(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='66.667%'>2</span> feature(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Scenarios</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='72.727%'><span class='strong'>8</span> scenario(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='27.273%'>3</span> scenario(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m4 l4 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='grandchild-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='89.831%'><span class='strong'>53</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='5.085%'>3</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='5.085%'>3</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Features</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Add a computer feature functionality</span>
+						<span class='test-time'>Feb 21, 2019 03:15:44 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='2' status='pass'>
+	<span class='duration right label'>0h 0m 20s+13ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Validate Add a computer page contents</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='3' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I open web page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='4' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I click on 'Add a new computer'</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='5' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I should see 'Add a new computer' page contents</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="./screenshots/Validate_Add_a_computer_page_contents_2019-02-21 15_15_58.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>Element Computer Name is visible.</div>
+				<div class='pre'>Element Introduced date is visible.</div>
+				<div class='pre'>Element Discontinued date is visible.</div>
+				<div class='pre'>Element Company Name is visible.</div>
+				<div class='pre'>Element Add computer button is visible.</div>
+				<div class='pre'>Element Cancel button is visible.</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenariooutline node' test-id='6' status='pass'>
+	<span class='duration right label'>0h 0m 25s+777ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Validate Add a Computer functionality</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='7' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Testing</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Validate Add a Computer functionality</span>
+			
+				<ul class='steps'>
+					<li test-id='8' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I open web page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='9' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on 'Add a new computer'</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='10' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I enter the computer name as "Test1"</span>
+							<div class='pre'>User is able to enter Test1 into Computer Name successfully</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='11' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I enter the Introduced date as "2019-02-14"</span>
+							<div class='pre'>User is able to enter 2019-02-14 into Introduced Date successfully</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='12' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I enter the Discontinued date as "2019-05-14"</span>
+							<div class='pre'>User is able to enter 2019-05-14 into Discontinued Date successfully</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='13' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I select the company as "Netronics"</span>
+							<div class='pre'>User is able to select the dropdown option with value: Netronics successfully</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='14' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on 'Create this computer'</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='15' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then I should see the computer added successfully as "Test1"</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href="./screenshots/Validate_Add_a_Computer_functionality_2019-02-21 15_16_11.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+		<li test-id='16' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Testing</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Validate Add a Computer functionality</span>
+			
+				<ul class='steps'>
+					<li test-id='17' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I open web page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='18' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on 'Add a new computer'</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='19' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I enter the computer name as "Test2"</span>
+							<div class='pre'>User is able to enter Test2 into Computer Name successfully</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='20' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I enter the Introduced date as "2019-02-11"</span>
+							<div class='pre'>User is able to enter 2019-02-11 into Introduced Date successfully</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='21' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I enter the Discontinued date as "2019-05-15"</span>
+							<div class='pre'>User is able to enter 2019-05-15 into Discontinued Date successfully</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='22' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I select the company as "RCA"</span>
+							<div class='pre'>User is able to select the dropdown option with value: RCA successfully</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='23' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on 'Create this computer'</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='24' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then I should see the computer added successfully as "Test2"</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href="./screenshots/Validate_Add_a_Computer_functionality_2019-02-21 15_16_24.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenariooutline node' test-id='25' status='pass'>
+	<span class='duration right label'>0h 0m 10s+259ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Validate cancel functionality in Add a Computer page</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='26' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Testing</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Validate cancel functionality in Add a Computer page</span>
+			
+				<ul class='steps'>
+					<li test-id='27' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I open web page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='28' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on 'Add a new computer'</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='29' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I enter the computer name as "Test1"</span>
+							<div class='pre'>User is able to enter Test1 into Computer Name successfully</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='30' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I enter the Introduced date as "2019-02-14"</span>
+							<div class='pre'>User is able to enter 2019-02-14 into Introduced Date successfully</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='31' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I enter the Discontinued date as "2019-05-14"</span>
+							<div class='pre'>User is able to enter 2019-05-14 into Discontinued Date successfully</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='32' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on cancel button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='33' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then I should see homepage</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href="./screenshots/Validate_cancel_functionality_in_Add_a_Computer_page_2019-02-21 15_16_53.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>Element Add a new computer button in home page is visible.</div>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenariooutline node' test-id='34' status='pass'>
+	<span class='duration right label'>0h 0m 8s+867ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Validate error message is displayed when wrong details are entered in Add a Computer page</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='35' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Testing</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Validate error message is displayed when wrong details are entered in Add a Computer page</span>
+			
+				<ul class='steps'>
+					<li test-id='36' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I open web page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='37' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on 'Add a new computer'</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='38' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I enter the computer name as "Test1"</span>
+							<div class='pre'>User is able to enter Test1 into Computer Name successfully</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='39' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I enter the Introduced date as "invalidate"</span>
+							<div class='pre'>User is able to enter invalidate into Introduced Date successfully</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='40' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on 'Create this computer'</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='41' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then I should be in Add a computer page</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href="./screenshots/Validate_error_message_is_displayed_when_wrong_details_are_entered_in_Add_a_Computer_page_2019-02-21 15_17_15.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>Element Fix error message in add a computer page is visible.</div>
+							<div class='pre'>Element Introduced date is visible.</div>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenariooutline node' test-id='42' status='pass'>
+	<span class='duration right label'>0h 0m 24s+292ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Validate computer gets added only with Computer Name</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='43' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Testing</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Validate computer gets added only with Computer Name</span>
+			
+				<ul class='steps'>
+					<li test-id='44' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I open web page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='45' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on 'Add a new computer'</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='46' class='node when pass' status='pass'><b>When</b>
+						<span class="bdd-step-name">When I enter the computer name as "TestingOnlyWithName"</span>
+							<div class='pre'>User is able to enter TestingOnlyWithName into Computer Name successfully</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='47' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I click on 'Create this computer'</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='48' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then I should see the computer added successfully as "TestingOnlyWithName"</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href="./screenshots/Validate_computer_gets_added_only_with_Computer_Name_2019-02-21 15_17_27.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='49'>
+					<div class='test-heading'>
+						<span class='test-name'>Search feature functionality</span>
+						<span class='test-time'>Feb 21, 2019 03:17:57 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenario node' test-id='50' status='pass'>
+	<span class='duration right label'>0h 0m 9s+582ms</span>
+	<div class='desc'>
+		<b>Scenario</b>
+		<span class="desc-text">Validate Search page contents</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='51' class='node given pass' status='pass'>
+			
+			<b>Given</b>
+			
+			<span class="bdd-step-name">Given I open web page</span>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='52' class='node then pass' status='pass'>
+			
+			<b>Then</b>
+			
+			<span class="bdd-step-name">Then I should see 'Search' page</span>
+				<div class='pre'>Element Search box is visible.</div>
+				<div class='pre'>Element Submit Search button is visible.</div>
+				<div class='pre'>Element table is visible.</div>
+				<div class='pre'>Element Previous link is visible.</div>
+				<div class='pre'>Element Current link is visible.</div>
+				<div class='pre'>Element Next link is visible.</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+		<li test-id='53' class='node and pass' status='pass'>
+			
+			<b>And</b>
+			
+			<span class="bdd-step-name">And I should validate the 'Search' Page contents</span>
+			<ul class='screenshots right'>
+				<li><a data-featherlight="image" href="./screenshots/Validate_Search_page_contents_2019-02-21 15_18_02.png"><i class='material-icons'>panorama</i></a></li>
+			</ul>
+				<div class='pre'>Element Search box is visible.</div>
+				<div class='pre'>Element Submit Search button is visible.</div>
+				<div class='pre'>Element table is visible.</div>
+				<div class='pre'>Element Previous link is visible.</div>
+				<div class='pre'>Element Current link is visible.</div>
+				<div class='pre'>Element Next link is visible.</div>
+				<div class='pre'>passed</div>
+			
+		</li>
+	</ul>
+</div>
+<div class='scenariooutline node' test-id='54' status='fail'>
+	<span class='duration right label'>0h 0m 7s+400ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Perform search for a computer name and validate the search content</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='55' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Testing</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Perform search for a computer name and validate the search content</span>
+			
+				<ul class='steps'>
+					<li test-id='56' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I open web page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='57' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I search for a "WonderlaEfteling"</span>
+							<div class='pre'>User is able to enter WonderlaEfteling into Search box successfully</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='58' class='node then fail' status='fail'><b>Then</b>
+						<span class="bdd-step-name">Then I should see the search results with "WonderlaEfteling" and "-" and "-" and "-"</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href="./screenshots/Perform_search_for_a_computer_name_and_validate_the_search_content_2019-02-21 15_18_26.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'><pre>org.openqa.selenium.NoSuchElementException: The element withTable content not found
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
+System info: host: 'EPPLGDAW0090', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: driver.version: unknown
+	at objectManager.BasePage.getContentFromSearchResultTable(BasePage.java:340)
+	at pages.SearchPage.validateSearchResult(SearchPage.java:45)
+	at steps.SearchPageSteps.i_should_see_the_search_results_with_and_and_and(SearchPageSteps.java:34)
+	at ✽.Then I should see the search results with "WonderlaEfteling" and "-" and "-" and "-"(SearchComputer.feature:13)
+</pre></div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenariooutline node' test-id='59' status='fail'>
+	<span class='duration right label'>0h 0m 7s+296ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Perform search for a computer name and open the search content</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='60' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Testing</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Perform search for a computer name and open the search content</span>
+			
+				<ul class='steps'>
+					<li test-id='61' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I open web page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='62' class='node and pass' status='pass'><b>And</b>
+						<span class="bdd-step-name">And I search for a "cucumberreporting"</span>
+							<div class='pre'>User is able to enter cucumberreporting into Search box successfully</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='63' class='node then fail' status='fail'><b>Then</b>
+						<span class="bdd-step-name">Then I should see the search results as "cucumberreporting"</span>
+							<div class='pre'><pre>org.openqa.selenium.NoSuchElementException: The element withTable content not found
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
+System info: host: 'EPPLGDAW0090', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: driver.version: unknown
+	at objectManager.BasePage.getContentFromSearchResultTable(BasePage.java:340)
+	at pages.SearchPage.getSearchResult(SearchPage.java:79)
+	at steps.SearchPageSteps.i_should_see_the_search_results_as(SearchPageSteps.java:49)
+	at ✽.Then I should see the search results as "cucumberreporting"(SearchComputer.feature:22)
+</pre></div>
+					</li>
+					<li test-id='64' class='node then skip' status='skip'><b>Then</b>
+						<span class="bdd-step-name">Then I click on search result as "cucumberreporting"</span>
+							<div class='pre'>skipped</div>
+					</li>
+					<li test-id='65' class='node then skip' status='skip'><b>Then</b>
+						<span class="bdd-step-name">Then I should validate the computer contents as "cucumberreporting" and "2019-02-14" and "2019-05-14" and "Netronics"</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href="./screenshots/Perform_search_for_a_computer_name_and_open_the_search_content_2019-02-21 15_18_35.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>skipped</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='66'>
+					<div class='test-heading'>
+						<span class='test-name'>Validate update and Delete computer functionality</span>
+						<span class='test-time'>Feb 21, 2019 03:18:41 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='scenariooutline node' test-id='67' status='fail'>
+	<span class='duration right label'>0h 0m 8s+437ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Perform search for a computer name and open the search content</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='68' class='node scenario fail' status='fail'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Testing</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Perform search for a computer name and open the search content</span>
+			
+				<ul class='steps'>
+					<li test-id='69' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I open web page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='70' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then I click on search result</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='71' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then I should see edit computer contents</span>
+							<div class='pre'>Element Delete computer button is visible.</div>
+							<div class='pre'>Element Save computer button is visible.</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='72' class='node when fail' status='fail'><b>When</b>
+						<span class="bdd-step-name">When I update the computer details as "cucumberreporting11"</span>
+							<div class='pre'><pre>org.openqa.selenium.InvalidElementStateException: invalid element state: Element must be user-editable in order to clear it.
+  (Session info: chrome=72.0.3626.109)
+  (Driver info: chromedriver=2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
+System info: host: 'EPPLGDAW0090', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\Users\LADDU_~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:56126}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.109, webStorageEnabled: true}
+Session ID: 3d7c04bfc16bed0c5136626eca6d7956
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
+	at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:118)
+	at objectManager.BasePage.type(BasePage.java:289)
+	at pages.UpdateAndDeletePage.updateComputer(UpdateAndDeletePage.java:34)
+	at steps.UpdateAndDeleteSteps.i_update_the_computer_details_as(UpdateAndDeleteSteps.java:42)
+	at ✽.When I update the computer details as "cucumberreporting11"(UpdateAndDeleteComputer.feature:8)
+</pre></div>
+					</li>
+					<li test-id='73' class='node then skip' status='skip'><b>Then</b>
+						<span class="bdd-step-name">Then I should see the details getting saved as "cucumberreporting11"</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href="./screenshots/Perform_search_for_a_computer_name_and_open_the_search_content_2019-02-21 15_18_45.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>skipped</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+<div class='scenariooutline node' test-id='74' status='pass'>
+	<span class='duration right label'>0h 0m 17s+634ms</span>
+	<div class='desc'>
+		<b>ScenarioOutline</b>
+		<span class="desc-text">Perform search for a computer name and Delete the computer</span>
+	</div>
+	<ul class='steps'>
+		<li test-id='75' class='node scenario pass' status='pass'>
+			<div class='category-list'>
+				<span class='category label white-text'>@Testing</span>
+			</div>
+			
+			<b>Scenario</b>
+			
+			<span class="bdd-step-name">Perform search for a computer name and Delete the computer</span>
+			
+				<ul class='steps'>
+					<li test-id='76' class='node given pass' status='pass'><b>Given</b>
+						<span class="bdd-step-name">Given I open web page</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='77' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then I click on search result</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='78' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then I should see edit computer contents</span>
+							<div class='pre'>Element Delete computer button is visible.</div>
+							<div class='pre'>Element Save computer button is visible.</div>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='79' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then I get the computername</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='80' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then I click on Delete the computer button</span>
+							<div class='pre'>passed</div>
+					</li>
+					<li test-id='81' class='node then pass' status='pass'><b>Then</b>
+						<span class="bdd-step-name">Then I should see the details getting deleted as "Test1"</span>
+						<ul class='screenshots right'>
+							<li><a data-featherlight="image" href="./screenshots/Perform_search_for_a_computer_name_and_Delete_the_computer_2019-02-21 15_19_06.png"><i class='material-icons'>panorama</i></a></li>
+						</ul>
+							<div class='pre'>passed</div>
+					</li>
+				</ul>
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@Testing</span>
+						<span class='category-status right'>
+							<span class='label pass'>7</span>
+							<span class='label fail'>5</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 7</span>
+							<span class='label red lighten-1 white-text'>Failed: 5</span>
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Feb 21, 2019 03:15:44 PM</td>
+										<td class='linked' test-id='1'>Add a computer feature functionality</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 21, 2019 03:16:07 PM</td>
+										<td class='linked' test-id='7'>Add a computer feature functionality.Validate Add a Computer functionality.Validate Add a Computer functionality</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 21, 2019 03:16:19 PM</td>
+										<td class='linked' test-id='16'>Add a computer feature functionality.Validate Add a Computer functionality.Validate Add a Computer functionality</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 21, 2019 03:16:49 PM</td>
+										<td class='linked' test-id='26'>Add a computer feature functionality.Validate cancel functionality in Add a Computer page.Validate cancel functionality in Add a Computer page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 21, 2019 03:17:11 PM</td>
+										<td class='linked' test-id='35'>Add a computer feature functionality.Validate error message is displayed when wrong details are entered in Add a Computer page.Validate error message is displayed when wrong details are entered in Add a Computer page</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 21, 2019 03:17:23 PM</td>
+										<td class='linked' test-id='43'>Add a computer feature functionality.Validate computer gets added only with Computer Name.Validate computer gets added only with Computer Name</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Feb 21, 2019 03:17:57 PM</td>
+										<td class='linked' test-id='49'>Search feature functionality</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 21, 2019 03:18:22 PM</td>
+										<td class='linked' test-id='55'>Search feature functionality.Perform search for a computer name and validate the search content.Perform search for a computer name and validate the search content</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 21, 2019 03:18:32 PM</td>
+										<td class='linked' test-id='60'>Search feature functionality.Perform search for a computer name and open the search content.Perform search for a computer name and open the search content</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 21, 2019 03:18:41 PM</td>
+										<td class='linked' test-id='66'>Validate update and Delete computer functionality</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 21, 2019 03:18:41 PM</td>
+										<td class='linked' test-id='68'>Validate update and Delete computer functionality.Perform search for a computer name and open the search content.Perform search for a computer name and open the search content</td>
+										<td><span class='test-status fail'>fail</span></td>
+									</tr>
+									<tr>
+										<td>Feb 21, 2019 03:18:54 PM</td>
+										<td class='linked' test-id='75'>Validate update and Delete computer functionality.Perform search for a computer name and Delete the computer.Perform search for a computer name and Delete the computer</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<div id='exception-view' class='view hide'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Exceptions</h3>
+                <ul id='exception-collection' class='exception-collection'>
+
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>org.openqa.selenium.NoSuchElementException</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>2</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Feb 21, 2019 03:18:29 PM</td>
+                                                        <td class='linked' test-id='58'>Search feature functionality.Perform search for a computer name and validate the search content.Perform search for a computer name and validate the search content.Then I should see the search results with "WonderlaEfteling" and "-" and "-" and "-"</td>
+                                                        <td><pre><pre>org.openqa.selenium.NoSuchElementException: The element withTable content not found
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
+System info: host: 'EPPLGDAW0090', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: driver.version: unknown
+	at objectManager.BasePage.getContentFromSearchResultTable(BasePage.java:340)
+	at pages.SearchPage.validateSearchResult(SearchPage.java:45)
+	at steps.SearchPageSteps.i_should_see_the_search_results_with_and_and_and(SearchPageSteps.java:34)
+	at ✽.Then I should see the search results with "WonderlaEfteling" and "-" and "-" and "-"(SearchComputer.feature:13)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Feb 21, 2019 03:18:39 PM</td>
+                                                        <td class='linked' test-id='63'>Search feature functionality.Perform search for a computer name and open the search content.Perform search for a computer name and open the search content.Then I should see the search results as "cucumberreporting"</td>
+                                                        <td><pre><pre>org.openqa.selenium.NoSuchElementException: The element withTable content not found
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
+System info: host: 'EPPLGDAW0090', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: driver.version: unknown
+	at objectManager.BasePage.getContentFromSearchResultTable(BasePage.java:340)
+	at pages.SearchPage.getSearchResult(SearchPage.java:79)
+	at steps.SearchPageSteps.i_should_see_the_search_results_as(SearchPageSteps.java:49)
+	at ✽.Then I should see the search results as "cucumberreporting"(SearchComputer.feature:22)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>org.openqa.selenium.InvalidElementStateException</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Feb 21, 2019 03:18:49 PM</td>
+                                                        <td class='linked' test-id='72'>Validate update and Delete computer functionality.Perform search for a computer name and open the search content.Perform search for a computer name and open the search content.When I update the computer details as "cucumberreporting11"</td>
+                                                        <td><pre><pre>org.openqa.selenium.InvalidElementStateException: invalid element state: Element must be user-editable in order to clear it.
+  (Session info: chrome=72.0.3626.109)
+  (Driver info: chromedriver=2.46.628402 (536cd7adbad73a3783fdc2cab92ab2ba7ec361e1),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T14:04:26.12Z'
+System info: host: 'EPPLGDAW0090', ip: '10.0.75.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_181'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.46.628402 (536cd7adbad73a..., userDataDir: C:\Users\LADDU_~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:56126}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), rotatable: false, setWindowRect: true, strictFileInteractability: false, takesHeapSnapshot: true, takesScreenshot: true, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unexpectedAlertBehaviour: ignore, unhandledPromptBehavior: ignore, version: 72.0.3626.109, webStorageEnabled: true}
+Session ID: 3d7c04bfc16bed0c5136626eca6d7956
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:276)
+	at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:118)
+	at objectManager.BasePage.type(BasePage.java:289)
+	at pages.UpdateAndDeletePage.updateComputer(UpdateAndDeletePage.java:34)
+	at steps.UpdateAndDeleteSteps.i_update_the_computer_details_as(UpdateAndDeleteSteps.java:42)
+	at ✽.When I update the computer details as "cucumberreporting11"(UpdateAndDeleteComputer.feature:8)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='exception-name'></h5>
+        </div>
+    </div>
+</div>
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Features
+					<div class='panel-lead'>3</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Scenarios
+					<div class='panel-lead'>11</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>59</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Feb 21, 2019 03:15:44 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Feb 21, 2019 03:19:14 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 3m 30s+104ms</div>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>@Testing</td>
+							<td>7</td>
+							<td>5</td>
+							<td>0</td>
+							<td>
+									58.333%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 1,
+				failParent: 2,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 2,
+				
+				passChild: 8,
+				failChild: 3,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 3,
+				
+				passGrandChild: 53,
+				failGrandChild: 3,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 3,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 6,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 			
+            
+        $(document).ready(function() {
+
+        });
+      
+        
+ 		</script>
+	</body>
+	
+</html>

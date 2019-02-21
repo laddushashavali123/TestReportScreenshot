@@ -1,3 +1,4 @@
+@Testing
 Feature: Validate update and Delete computer functionality
 
   Scenario Outline: Perform search for a computer name and open the search content
